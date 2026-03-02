@@ -54,9 +54,6 @@ int main() {
 				// 범위 벗어난 경우 제거
 				if (a.x < 0 || a.x > 4000 || a.y < 0 || a.y > 4000)
 					continue;
-				
-				int nx = a.x + 2000;
-				int ny = a.y + 2000;
 
 				// 충돌 발생
 				if (map[a.x][a.y] >= 2)
