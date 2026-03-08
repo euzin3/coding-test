@@ -6,7 +6,6 @@ using namespace std;
 int N;
 int map[17][17];
 int ans;
-int path[17];
 int bundle[17]; // index : 식재료 번호 value : 1 (A) 0 (B)
 
 int sinergy() {
@@ -33,12 +32,9 @@ void select(int now, int start) {
 		ans = min(ans, diff);
 		return;
 	}
-
 	for (int i = start; i <= N; i++) {
-		path[now] = i;
 		bundle[i] = 1;
 		select(now + 1, i + 1);
-		path[now] = 0;
 		bundle[i] = 0;
 	}
 }
